@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-transform-postcss",
+  "name": "@qutics/babel-plugin-transform-postcss",
   "version": "0.2.1",
   "description": "PostCSS Babel Transform",
   "main": "index.js",
