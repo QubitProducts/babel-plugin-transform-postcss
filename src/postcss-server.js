@@ -118,7 +118,11 @@ const main = async function main(
     server.on('error', (err: Error) => reject(err));
     server.on('listening', () => {
       const handler = () => {
-        fs.unlinkSync(socketPath); // eslint-disable-line no-sync
+        try {
+          fs.unlinkSync(socketPath); // eslint-disable-line no-sync
+        } catch (e) {
+          console.warn(`Unable to unlink ${socketPath}: ${e.message}`)
+        }
       };
 
       server.on('close', () => {
