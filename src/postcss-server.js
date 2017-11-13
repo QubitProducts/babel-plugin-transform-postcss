@@ -120,8 +120,9 @@ const main = async function main(
       const handler = () => {
         try {
           fs.unlinkSync(socketPath); // eslint-disable-line no-sync
-        } catch (e) {
-          console.warn(`Unable to unlink ${socketPath}: ${e.message}`)
+        }
+        catch (err) {
+          error(err.stack);
         }
       };
 
